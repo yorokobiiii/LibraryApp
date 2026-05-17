@@ -118,3 +118,5 @@ C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\ref
 C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\LibraryApp.pdb
 C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\LibraryApp.genruntimeconfig.cache
 C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\ref\LibraryApp.dll
+C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\LibraryApp.RazorAssemblyInfo.cache
+C:\Users\kosol\OneDrive\Рабочий стол\LibraryApp\obj\Debug\net10.0\LibraryApp.RazorAssemblyInfo.cs

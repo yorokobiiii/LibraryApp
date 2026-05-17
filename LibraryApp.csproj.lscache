@@ -437,9 +437,12 @@ Components/
   Home.razor
   NotFound.razor
   Weather.razor
-  _Host.cshtml
  Routes.razor
  _Imports.razor
+Pages/
+ Shared/NavMenu.razor
+ _Host.cshtml
+ _ViewImports.cshtml
 
 [dynamicFiles]
 Components/
@@ -456,6 +459,9 @@ Components/
   Home.razor
   NotFound.razor
   Weather.razor
-  _Host.cshtml
  Routes.razor
  _Imports.razor
+Pages/
+ Shared/NavMenu.razor
+ _Host.cshtml
+ _ViewImports.cshtml

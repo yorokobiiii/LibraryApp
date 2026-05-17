@@ -4,15 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Добавляем сервисы
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-// База данных
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlite("Data Source=library.db"));
 
-// Регистрируем сервис
 builder.Services.AddScoped<IBookService, BookService>();
 
 var app = builder.Build();
