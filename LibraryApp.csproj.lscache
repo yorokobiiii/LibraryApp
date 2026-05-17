@@ -64,6 +64,7 @@ obj/Debug/net10.0/
  EmbeddedAttribute.cs
  LibraryApp.AssemblyInfo.cs
  LibraryApp.GlobalUsings.g.cs
+ LibraryApp.RazorAssemblyInfo.cs
  ValidatableTypeAttribute.cs
 Program.cs
 Services/BookService.cs
@@ -436,6 +437,7 @@ Components/
   Home.razor
   NotFound.razor
   Weather.razor
+  _Host.cshtml
  Routes.razor
  _Imports.razor
 
@@ -454,5 +456,6 @@ Components/
   Home.razor
   NotFound.razor
   Weather.razor
+  _Host.cshtml
  Routes.razor
  _Imports.razor

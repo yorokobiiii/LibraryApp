@@ -35,8 +35,10 @@
         <ValidationMessage For="@(() => newBook.Year)" />
     </div>
 
-    <button type="submit" class="btn btn-primary">💾 Сохранить</button>
-    <a href="/books" class="btn btn-secondary">Отмена</a>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">💾 Сохранить</button>
+        <button type="button" class="btn btn-secondary" @onclick="GoToBooks">📚 К списку книг</button>
+    </div>
 </EditForm>
 
 @code {
@@ -44,7 +46,22 @@
 
     private async Task HandleValidSubmit()
     {
+        if (string.IsNullOrWhiteSpace(newBook.Title))
+        {
+            return;
+        }
+        
+        if (string.IsNullOrWhiteSpace(newBook.Author))
+        {
+            return;
+        }
+
         await BookService.AddBookAsync(newBook);
+        Navigation.NavigateTo("/books");
+    }
+
+    private void GoToBooks()
+    {
         Navigation.NavigateTo("/books");
     }
 }
