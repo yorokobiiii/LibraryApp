@@ -8,7 +8,7 @@
 
 <h3>➕ Добавление новой книги</h3>
 
-<EditForm Model="@newBook" OnValidSubmit="@HandleValidSubmit">
+<EditForm FormName="addbook" Model="@newBook" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary class="text-danger" />
 
