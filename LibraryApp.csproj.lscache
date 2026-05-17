@@ -429,6 +429,7 @@ Components/
   NavMenu.razor
   ReconnectModal.razor
  Pages/
+  Books.razor
   Counter.razor
   Error.razor
   Home.razor
@@ -445,6 +446,7 @@ Components/
   NavMenu.razor
   ReconnectModal.razor
  Pages/
+  Books.razor
   Counter.razor
   Error.razor
   Home.razor

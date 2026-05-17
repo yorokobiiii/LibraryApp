@@ -1,0 +1,83 @@
+@page "/books"
+@using LibraryApp.Models
+@using LibraryApp.Services
+@inject IBookService BookService
+
+<h3>📚 Библиотека книг</h3>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input type="text" class="form-control" 
+               placeholder="🔍 Поиск по названию, автору или жанру..." 
+               @bind="searchTerm"
+               @bind:event="oninput" />
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" @onclick="SearchBooks">Найти</button>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-secondary" @onclick="ResetSearch">Сбросить</button>
+    </div>
+    <div class="col-md-2">
+        <a href="/addbook" class="btn btn-success">+ Добавить книгу</a>
+    </div>
+</div>
+
+@if (books == null)
+{
+    <p>Загрузка...</p>
+}
+else if (books.Count == 0)
+{
+    <div class="alert alert-warning">😢 Книги не найдены</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+                <th>Год</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td><strong>@book.Title</strong></td>
+                    <td>@book.Author</td
+                    <td>@book.Genre</td
+                    <td>@book.Year</td
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private string searchTerm = "";
+    private List<Book>? books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadBooks();
+    }
+
+    private async Task LoadBooks()
+    {
+        books = await BookService.GetAllBooksAsync();
+    }
+
+    private async Task SearchBooks()
+    {
+        books = await BookService.SearchBooksAsync(searchTerm);
+    }
+
+    private async Task ResetSearch()
+    {
+        searchTerm = "";
+        books = await BookService.GetAllBooksAsync();
+    }
+}
